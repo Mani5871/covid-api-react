@@ -1,6 +1,7 @@
 import React from 'react'
 import {FaSun, FaMoon} from "react-icons/fa";
 import {useEffect} from "react"
+import {Link} from "react-router-dom";
 
 export default function Navbar(props) {
 
@@ -27,7 +28,7 @@ export default function Navbar(props) {
         <>
             <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">COVID - API</a>
+                    <Link className="navbar-brand" to="/">COVID - API</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -36,15 +37,13 @@ export default function Navbar(props) {
                             <li className="nav-item">
                                 <a className="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Link</a>
-                            </li>
+                            
                             
                             
                         </ul>
                         <form className="d-flex">
-                            <a onClick={sunClicked} href="#" id = "sun"> <FaSun></FaSun> </a>
-                            <a href = "#" onClick={moonClicked} id = "moon"> <FaMoon/> </a>
+                            <a onClick={sunClicked} href="#" id = "sun"> <FaSun color="white" size = {35}></FaSun> </a>
+                            <a href = "#" onClick={moonClicked} id = "moon"> <FaMoon color="black" size = {35}/> </a>
                             
                         </form>
                     </div>
