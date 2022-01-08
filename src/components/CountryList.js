@@ -25,8 +25,8 @@ export default class CountryList extends Component {
                 <div className="row">
                     {this.state.country_list.map(country => {
                         return(
-                            <div className="col-md-4">
-                                <Country cardStyle = {this.props.cardStyle} mode={this.props.mode} country={country.Country} key={country.Country} />
+                            <div className="col-md-4" key = {country.Country}>
+                                <Country cardStyle = {this.props.cardStyle} mode={this.props.mode} country={country.Country} key={country} />
                             </div>
                         )
                     })}   
