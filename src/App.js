@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import CountryList from './components/CountryList';
+import Details from './components/Details';
 
 function App() {
 
@@ -29,15 +30,14 @@ function App() {
 
   return (
     <div >
-
-        <Router>
-          <Navbar mode = {mode} changeMode = {changeMode} />
-            <Routes>
-                <Route path="/countries" element={<CountryList mode = {mode} cardStyle = {cardStyle} />} />
-                <Route path="/" element={<Home h1Style = {h1Style}/>} />
-
-            </Routes>
-        </Router>
+      <Router>
+        <Navbar mode = {mode} changeMode = {changeMode} />
+          <Routes>
+              <Route path="/countries" element={<CountryList mode = {mode} cardStyle = {cardStyle} />} />
+              <Route path="/" element={<Home h1Style = {h1Style}/>} />
+              <Route path="/details" element={<Details mode = {mode} cardStyle = {cardStyle} />} />
+          </Routes>
+      </Router>
     </div>
   );
 }
